@@ -15,12 +15,15 @@ def is_prime(func):
                 if n % (f + 2) == 0: return False
                 f += 6
             return True
-
-        if if_prime(n):
-            print(f'Число {n} простое')
+        if n==1:
+            print(f'Число {n} не является ни составным, ни простым')
+            return n
         else:
-            print(f'Число {n} составное')
-        return n
+            if if_prime(n):
+                print(f'Число {n} простое')
+            else:
+                print(f'Число {n} составное')
+            return n
 
     return wrapper
 
@@ -30,4 +33,4 @@ def sum_three(a, b, c):
     return a + b + c
 
 
-print(sum_three(2, 3, 6))
+print(sum_three(1, 10, 15))
